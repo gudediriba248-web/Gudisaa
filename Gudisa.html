@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyPortfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{
+            font-family:Arial, sans-serif;
+            scroll-behavior:smooth;
+            overflow-x: hidden;
+        }
+        nav{
+            position:fixed;
+            width:100%;
+            background:rgba(0,0,0,0.8);
+            padding:20px;
+            text-align:right;
+            z-index:1000;
+        }
+        nav a{
+            color:white;
+            margin:10px;
+            font-weight:bold;
+            text-decoration:none;
+        }
+        nav a:hover{
+            background:aqua;
+            padding:8px;
+            border-radius:5px;
+            color: black;
+        }
+        section{
+            min-height:100vh;
+            padding:120px 40px;
+        }
+        #home{
+            background:aquamarine;
+            text-align:center;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+        }
+        #home h1{
+            font-size:55px;
+        }
+        #home h3{
+            margin-top:20px;
+            font-size:25px;
+            height: 30px; 
+        }
+        #about{
+            background:purple;
+            color:white;
+            text-align: center;
+        }
+        .about-content{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            gap:40px;
+            flex-wrap:wrap;
+            text-align:left;
+            max-width:900px;
+            margin:auto;
+        }
+        .about-content img{
+            width:250px;
+            border-radius:10px;
+        }
+        #skills{
+            background:cornflowerblue;
+            color:white;
+            text-align: center;
+        }
+        .skills-container{
+            max-width:700px;
+            margin:auto;
+            text-align:left;
+        }
+        .article{
+            margin-bottom:25px;
+            transition:.3s;
+        }
+        .article:hover{
+            transform:scale(1.05);
+        }
+        #creative{
+            background:rgb(103, 22, 143);
+            color:white;
+            text-align:center;
+        }
+        .skills-progress-container {
+            width: 300px;
+            margin: 40px auto;
+        }
+        .skill {
+            margin-bottom: 20px;
+        }
+        .skill span {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: white; 
+        }
+        .bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .fill {
+            height: 100%;
+            background: aqua;
+        }
+        .html { width: 50%; }
+        .css { width: 15%; }
+        .php { width: 0%; }
+        .javascript { width: 5%; }
+      #creative button{
+            padding:12px 25px;
+            background:aqua;
+            border:none;
+            cursor:pointer;
+            margin-top:20px;
+            font-weight: bold;
+        }
+        #contact{
+            background:rgb(10,10,70);
+            color:white;
+            text-align: center;
+        }
+        .contact-container{
+            display:flex;
+            justify-content:space-between;
+            gap:40px;
+            flex-wrap:wrap;
+            max-width:900px;
+            margin:auto;
+            text-align:left;
+        }
+        .contact-form{
+            flex:1;
+            }
+        .contact-form input,
+        .contact-form textarea{
+            width:100%;
+            padding:12px;
+            margin:10px 0;
+            border:none;
+            border-radius:5px;
+        }
+        .contact-form button{
+            padding:12px 25px;
+            background:aqua;
+            border:none;
+            cursor:pointer;
+            font-weight: bold;
+        }
+        .social-icons{
+            margin-top:20px;
+        }
+        .social-icons a{
+            color:white;
+            font-size:25px;
+            margin-right: 15px;
+            transition:.3s;
+        }
+        .social-icons a:hover{
+            color:aqua;
+            transform:translateY(-5px);
+        }
+        footer{
+            background:#ddd;
+            text-align:center;
+            padding:20px;
+            color: #333;
+        }
+        .fade{
+            opacity:0;
+            transform:translateY(40px);
+            transition:1s;
+        }
+        .show{
+            opacity:1;
+            transform:translateY(0);
+        }
+        .top{
+              position:absolute;
+              right:20px;
+              bottom:20px;
+              background:rgb(133, 37, 37);
+             color:white;
+               padding:5px 10px;
+              cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#creative">Creative</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="home" class="fade">
+    <h1>Hello, I am Gudisa</h1>
+    <h3 id="typing"></h3>
+</section>
+
+<section id="about" class="fade">
+    <h1>About Me</h1>
+    <div class="about-content">
+        <img src="Gude.jpg" alt="Gudisa's Profile">
+        <p>
+            I am Grade 11 Website Design and Development student. I love football and volleyball very much.
+        </p>
+    </div>
+</section>
+
+<section id="skills" class="fade">
+    <h1>My Skills</h1>
+    <div class="skills-container">
+        <div class="article"><h3>Football</h3></div>
+        <div class="article"><h3>Handball</h3></div>
+        <div class="article"><h3>Volleyball</h3></div>
+    </div>
+</section>
+
+<section id="creative" class="fade">
+    <h1>Creative Skills</h1>
+    <p id="creativeText">I love movie and football.</p>
+    <button id="readMore">Read More</button>
+
+    <!-- Skills Bars placed inside Creative Section -->
+    <div class="skills-progress-container">
+        <div class="skill">
+            <span>HTML <b>50%</b></span>
+            <div class="bar"><div class="fill html"></div></div>
+        </div>
+        <div class="skill">
+            <span>CSS <b>15%</b></span>
+            <div class="bar"><div class="fill css"></div></div>
+        </div>
+        <div class="skill">
+            <span>PHP <b>0%</b></span>
+            <div class="bar"><div class="fill php"></div></div>
+        </div>
+        <div class="skill">
+            <span>JAVASCRIPT <b>5%</b></span>
+            <div class="bar"><div class="fill javascript"></div></div>
+        </div>
+    </div>
+</section>
+ <section id="contact" class="fade">
+    <h1>Contact Me</h1>
+    <div class="contact-container">
+        <div class="contact-form">
+            <input type="text" id="name" placeholder="Your Name">
+            <input type="email" id="email" placeholder="Your Email">
+            <textarea id="message" placeholder="Your Message"></textarea>
+            <button id="sendBtn">Send Message</button>
+        </div>
+        <div>
+            <p>📍 Addis Ababa</p>
+            <p>📞 0913953488</p>
+            <p>✉️ Gudediriba248@gmail.com</p>
+            <p>📸 @gude_dereba</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-telegram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+<div class="top" onclick="location.href='#home'">^</div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer>
+    
+    <footer>
+<p>© 2026 Copyright Gudisa Portfolio</p>
+
+</footer>
+
+    
+</footer>
+<script>
+    // Typing Effect
+    const text="I am Grade 11 Website Design and Development Student";
+    let i=0;
+    function typing(){
+        if(i < text.length){
+            document.getElementById("typing").innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typing, 50);
+        }
+    }
+    typing();
+
+    document.getElementById("readMore").onclick=function(){
+        document.getElementById("creativeText").innerHTML += " I also help students learn coding and technology.";
+        this.style.display = "none"; 
+    }
+    document.getElementById("sendBtn").onclick=function(){
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let message = document.getElementById("message").value;
+
+    }
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.classList.add("show");
+            }
+        });
+    });
+
+    document.querySelectorAll(".fade").forEach(el => {
+        observer.observe(el);
+    });
+</script>
+</body>
+</html>
